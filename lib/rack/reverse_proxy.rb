@@ -23,7 +23,7 @@ module Rack
           headers[$1.gsub('_', '-')] = value
         end
       }
-    debugger
+
       headers['HOST'] = uri.host if all_opts[:preserve_host]
       headers['X-Forwarded-Host'] = rackreq.host if all_opts[:x_forwarded_host]
 
