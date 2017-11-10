@@ -20,7 +20,7 @@ module Rack
       headers = Rack::Utils::HeaderHash.new
       env.each { |key, value|
         if key =~ /HTTP_(.*)/
-          headers[$1.gsub('_', '-')] = value
+          headers[$1.gsub('_', '-')] = value ? value : ''
         end
       }
 
